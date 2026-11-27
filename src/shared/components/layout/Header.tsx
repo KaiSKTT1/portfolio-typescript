@@ -6,8 +6,6 @@ import { toggleLanguage, toggleTheme } from '../../../store/slices/themeSlice';
 const NAV_ITEMS = [
     { to: '/', labelVi: 'Giới thiệu', labelEn: 'About' },
     { to: '/projects', labelVi: 'Dự án', labelEn: 'Projects' },
-    { to: '/experience', labelVi: 'Kinh nghiệm', labelEn: 'Experience' },
-    { to: '/blog', labelVi: 'Bài viết', labelEn: 'Blog' },
     { to: '/contact', labelVi: 'Liên hệ', labelEn: 'Contact' },
 ];
 
