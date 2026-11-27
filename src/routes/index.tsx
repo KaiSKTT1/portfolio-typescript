@@ -1,12 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { PortfolioLayout } from '../shared/components/layout/PortfolioLayout';
 import { HomePage } from '../features/about/pages/HomePage';
+import { ProjectsPage } from '../features/projects/pages/ProjectsPage';
+import { ProjectDetailPage } from '../features/projects/pages/ProjectDetailPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <PortfolioLayout />,
-    children: [{ index: true, element: <HomePage /> }]
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'projects', element: <ProjectsPage /> },
+      { path: 'projects/:id', element: <ProjectDetailPage /> },
+    ],
   },
-
 ]);
