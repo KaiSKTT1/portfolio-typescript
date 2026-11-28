@@ -4,7 +4,6 @@ import type { ThemeMode } from '../../shared/types/common';
 //Trạng thái giao diện người dùng
 interface ThemeState {
     mode: ThemeMode;
-    language: Language;
 }
 
 //kiểm tra xem người dùng đã từng chọn giao diện nào chưa.
