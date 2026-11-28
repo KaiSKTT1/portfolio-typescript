@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { ProfileInfo } from '../types';
 import { Button } from '../../../shared/components/ui/Button';
 import { ResumeDownloadButton } from './ResumeDownloadButton';
@@ -9,6 +10,18 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ profile }: HeroSectionProps) {
+    const { t } = useTranslation();
+    const stats = [
+        {
+            label: t('home.stats.directionLabel'),
+            value: t('home.stats.directionValue'),
+        },
+        {
+            label: t('home.stats.coreStackLabel'),
+            value: t('home.stats.coreStackValue'),
+        },
+    ];
+
     return (
         <section className="py-6 sm:py-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -16,10 +29,10 @@ export function HeroSection({ profile }: HeroSectionProps) {
                     <div className="space-y-3">
                         <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5">
                             <Sparkles className="w-4 h-4" />
-                            {profile.role}
+                            {t('home.role')}
                         </p>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                            Xin chào, mình là{' '}
+                            {t('home.greeting')}{' '}
                             <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                                 {profile.fullName}
                             </span>
@@ -27,18 +40,18 @@ export function HeroSection({ profile }: HeroSectionProps) {
                     </div>
 
                     <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                        {profile.tagline}
+                        {t('home.tagline')}
                     </p>
 
                     <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                         <MapPin className="w-4 h-4 text-indigo-500" />
-                        <span>{profile.location}</span>
+                        <span>{t('home.location')}</span>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 pt-2">
                         <Link to="/projects">
                             <Button variant="primary" size="lg">
-                                <span>Xem Dự Án</span>
+                                <span>{t('home.viewProjects')}</span>
                                 <ArrowRight className="w-4 h-4" />
                             </Button>
                         </Link>
@@ -46,7 +59,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
                     </div>
 
                     <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
-                        {profile.stats.map((stat) => (
+                        {stats.map((stat) => (
                             <div key={stat.label}>
                                 <div className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                                     {stat.value}

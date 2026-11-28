@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react';
 import { useDebounce } from '../../../shared/hooks/useDebounce';
-import type { Project } from '../types';
+import type { LocalizedProject } from '../types';
 import {
     extractUniqueTechStacks,
     filterProjects,
 } from '../utils/projectHelpers';
 
 
-export function useProjectFilters(projects: Project[]) {
+export function useProjectFilters(projects: LocalizedProject[]) {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedTech, setSelectedTech] = useState('All');
 

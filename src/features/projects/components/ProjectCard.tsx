@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Code2, ExternalLink } from 'lucide-react';
-import type { Project } from '../types';
+import { useTranslation } from 'react-i18next';
+import type { LocalizedProject } from '../types';
 import { Badge } from '../../../shared/components/ui/Badge';
 
 interface ProjectCardProps {
-    project: Project;
+    project: LocalizedProject;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+    const { t } = useTranslation();
+
     return (
         <article className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden shadow-sm hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300 flex flex-col text-left">
             <div className="relative h-52 overflow-hidden bg-slate-100 dark:bg-slate-800">
@@ -18,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 />
                 {project.featured && (
                     <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-600 text-white shadow">
-                        Nổi bật
+                        {t('projects.featured')}
                     </span>
                 )}
             </div>
@@ -51,7 +54,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
                             <Code2 className="w-4 h-4" />
-                            <span>Source</span>
+                            <span>{t('projects.source')}</span>
                         </a>
 
                         {project.liveDemoUrl && (
@@ -62,7 +65,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400"
                             >
                                 <ExternalLink className="w-4 h-4" />
-                                <span>Live Demo</span>
+                                <span>{t('projects.liveDemo')}</span>
                             </a>
                         )}
                     </div>
@@ -71,7 +74,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         to={`/projects/${project.id}`}
                         className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
                     >
-                        <span>Chi tiết</span>
+                        <span>{t('projects.details')}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                 </div>

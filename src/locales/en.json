@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "title": "DevPortfolio | Huu Phuc Nguyen",
+    "description": "Personal portfolio of Huu Phuc Nguyen."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "header": {
+    "switchLanguage": "Switch language",
+    "toggleTheme": "Toggle light/dark theme"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "role": "Software Engineer (ReactJS / TypeScript & Spring Boot)",
+    "tagline": "I build end-to-end web applications, from polished ReactJS, TypeScript, and Redux frontends to robust RESTful APIs with Java Spring Boot.",
+    "location": "Ho Chi Minh City, Vietnam",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume (PDF)",
+    "stats": {
+      "directionLabel": "Focus",
+      "directionValue": "Full Stack",
+      "coreStackLabel": "Core Tech Stack",
+      "coreStackValue": "React & Spring"
+    }
+  },
+  "about": {
+    "badge": "About Me",
+    "title": "About Me & Professional Direction",
+    "subtitle": "My story and how I build high-quality frontend products.",
+    "bio": [
+      "Hi! I'm Huu Phuc Nguyen, a Software Engineer who enjoys building complete web products, from user interfaces to the system architecture behind them.",
+      "On the frontend, I focus on intuitive UI/UX and maintainable state management with ReactJS, TypeScript, Redux Toolkit, and Tailwind CSS using a feature-based architecture.",
+      "On the backend, I use Java and Spring Boot to design RESTful APIs, implement business logic and security, and integrate databases. This helps me bring an end-to-end perspective to product development."
+    ],
+    "highlights": {
+      "architecture": {
+        "title": "Feature-based Architecture",
+        "description": "Organize code into independent feature domains (types, data, hooks, utils, components, and pages) that are easy to extend."
+      },
+      "performance": {
+        "title": "Performance & Experience",
+        "description": "Optimize rendering with custom hooks, debounced search, and smooth light and dark themes."
+      },
+      "typescript": {
+        "title": "100% Strict TypeScript",
+        "description": "Define precise types for data structures and props to minimize runtime errors."
+      }
+    }
+  },
+  "resume": {
+    "download": "Download Resume (PDF)"
+  },
+  "projects": {
+    "heading": {
+      "badge": "Portfolio Showcase",
+      "title": "Featured Projects",
+      "subtitle": "Products I architected and built from the ground up."
+    },
+    "searchPlaceholder": "Search projects or technologies...",
+    "all": "All",
+    "featured": "Featured",
+    "source": "Source",
+    "liveDemo": "Live Demo",
+    "details": "Details",
+    "noResults": "No projects match the current filters.",
+    "clearFilters": "Clear filters",
+    "backToList": "Back to project list",
+    "backToProjects": "Back to all projects",
+    "notFound": "Project not found",
+    "completed": "Completed: {{date}}",
+    "problemTitle": "1. The Problem",
+    "solutionTitle": "2. Solution & Architecture",
+    "highlightsTitle": "Technical Highlights",
+    "items": {
+      "elearning-platform": {
+        "title": "E-Learning Platform — Spring Boot RESTful API",
+        "shortDescription": "A modern RESTful backend for an online learning platform, featuring JWT authentication, RBAC authorization, and cloud file storage.",
+        "problemStatement": "Build a scalable e-learning backend that carefully manages access for students, instructors, and administrators while securely storing course materials and images.",
+        "solutionArchitecture": "Designed a layered architecture with Java 21 and Spring Boot 3.5. Spring Security and JWT access/refresh tokens provide security, Spring Data JPA and MySQL 8.0 manage data, and cloud storage handles learning materials.",
+        "highlights": [
+          "Implemented secure authentication and authorization with JWT access and refresh tokens and role-based access control (RBAC).",
+          "Managed the full course, lesson, enrollment, and user-profile workflows, including avatar uploads.",
+          "Standardized the RESTful API, centralized exception handling, and added input validation."
+        ]
+      },
+      "j2ee-ecommerce-backend": {
+        "title": "J2EE E-Commerce Backend (GHN & VNPay Integration)",
+        "shortDescription": "An e-commerce backend integrating VNPay Sandbox payments, GHN shipping, and database migrations managed with Flyway.",
+        "problemStatement": "Production e-commerce systems need reliable online payments, automated transaction reconciliation through IPN, and real-time shipment status synchronization with delivery providers.",
+        "solutionArchitecture": "Built with Java 21, Spring Boot, Spring Security, and MySQL. Flyway manages schema versions, MapStruct maps DTOs, Cloudinary stores product images, and VNPay and GHN are integrated through their webhooks and APIs.",
+        "highlights": [
+          "Integrated VNPay Sandbox to create payment URLs and process IPN webhooks for order reconciliation.",
+          "Connected to the GHN API to create, cancel, and track shipments.",
+          "Managed database migrations with Flyway and used MapStruct, Lombok, and SpringDoc OpenAPI (Swagger) documentation."
+        ]
+      },
+      "lthd-springboot-fullstack": {
+        "title": "Fullstack Sales System (Spring Boot & React 19)",
+        "shortDescription": "A full-stack sales management system combining a JWT-secured Spring Boot backend, Redis caching, and a React 19 and Tailwind CSS v4 frontend.",
+        "problemStatement": "Improve product and order retrieval as traffic grows while providing a smooth shopping and administration experience in the browser.",
+        "solutionArchitecture": "Uses a client-server architecture. The backend uses Java 21, Spring Boot, Nimbus JOSE + JWT, MapStruct, and Redis Cache; the frontend uses React 19, Vite, React Router v7, and Tailwind CSS v4.",
+        "highlights": [
+          "Used Spring Data Redis for caching to reduce direct query load on MySQL.",
+          "Secured APIs with Spring Security and Nimbus JOSE + JWT, with integration tests using MockMvc and H2 Database.",
+          "Built a modern React 19 and Tailwind CSS v4 interface connected to REST APIs with Axios."
+        ]
+      },
+      "bus-tracking-system": {
+        "title": "BusTracking — Real-Time Bus Tracking System",
+        "shortDescription": "A full-stack web application for finding routes and viewing bus locations on an interactive map with React Leaflet and Redux Toolkit.",
+        "problemStatement": "Passengers and administrators need a clearer way to find routes and stops and to track vehicle locations on a map.",
+        "solutionArchitecture": "Built as a full-stack JavaScript application. The frontend uses React 19, Redux Toolkit, React Leaflet, Leaflet Routing Machine, and Framer Motion; the backend uses Node.js, Express, and MySQL.",
+        "highlights": [
+          "Integrated interactive maps with React Leaflet and Leaflet Routing Machine to display routes and stops.",
+          "Managed global state with Redux Toolkit and added transitions with Framer Motion and Tailwind CSS.",
+          "Built RESTful APIs with Node.js, Express, and MySQL2 for route, schedule, and stop data."
+        ]
+      },
+      "pdf-rag-chatbot": {
+        "title": "PDF/DOCX RAG Chatbot — Intelligent Document Q&A",
+        "shortDescription": "An AI chatbot that answers questions about PDF and DOCX documents using a local Ollama LLM, with OCR and page citations.",
+        "problemStatement": "Finding information in long PDF and DOCX files takes time. General-purpose LLMs can hallucinate and often fail to cite the exact source page.",
+        "solutionArchitecture": "Implemented a Python retrieval-augmented generation (RAG) pipeline: document loader with OCR for scanned PDFs, text splitter, embedding model, vector store, and retriever connected to a local Ollama LLM and Streamlit interface.",
+        "highlights": [
+          "Built a complete RAG workflow for uploading PDF/DOCX files, chunking text, creating a vector store, and retrieving relevant context.",
+          "Added configurable OCR modes (off/auto/force) for scanned PDFs and returned answers with source and page citations.",
+          "Runs locally with Ollama to keep data private and includes both a Streamlit web interface and a CLI for debugging."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "heading": {
+      "badge": "Get In Touch",
+      "title": "Let's get in touch",
+      "subtitle": "Looking for a Software Engineer for your project or team? Leave me a message below!"
+    },
+    "info": {
+      "email": "Direct email",
+      "phone": "Phone / Zalo",
+      "location": "Work location",
+      "locationValue": "Ho Chi Minh City, Vietnam (On-site / Hybrid / Remote)"
+    },
+    "directHeading": "Direct contact information",
+    "socialHeading": "Connect on social media",
+    "form": {
+      "successTitle": "Message sent successfully!",
+      "successMessage": "Thanks for getting in touch. I'll respond by email as soon as possible.",
+      "sendAnother": "Send another message",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Jane Doe",
+      "emailLabel": "Contact email",
+      "emailPlaceholder": "hr@company.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Collaboration / Interview invitation",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Write your message...",
+      "submit": "Send Message"
+    },
+    "validation": {
+      "senderNameRequired": "Please enter your name.",
+      "senderEmailRequired": "Please enter your email address.",
+      "senderEmailInvalid": "Please enter a valid email address.",
+      "subjectRequired": "Please enter a subject.",
+      "messageMinLength": "Your message must be at least 10 characters long."
+    }
+  },
+  "footer": {
+    "builtWith": "© {{year}} {{name}}. Built with React, TypeScript & Redux Toolkit."
+  }
+}

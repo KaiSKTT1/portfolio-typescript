@@ -1,15 +1,18 @@
 export interface Project {
     id: string;
-    title: string;
-    shortDescription: string;
-    problemStatement: string;
-    solutionArchitecture: string;
     thumbnailUrl: string;
     techStack: string[];
     githubUrl: string;
     liveDemoUrl?: string;
     featured: boolean;
     completedAt: string;
+}
+
+export interface LocalizedProject extends Project {
+    title: string;
+    shortDescription: string;
+    problemStatement: string;
+    solutionArchitecture: string;
     highlights: string[];
 }
 

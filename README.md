@@ -1,75 +1,91 @@
-# React + TypeScript + Vite
+# DevPortfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website portfolio cá nhân được xây dựng bằng React và TypeScript. Ứng dụng giới thiệu thông tin cá nhân, các dự án đã thực hiện và cung cấp biểu mẫu liên hệ.
 
-Currently, two official plugins are available:
+## Tính năng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Trang giới thiệu với hồ sơ cá nhân.
+- Danh sách dự án, hỗ trợ tìm kiếm và lọc theo công nghệ.
+- Trang chi tiết cho từng dự án, gồm mô tả vấn đề, giải pháp, công nghệ sử dụng và liên kết liên quan.
+- Biểu mẫu liên hệ có kiểm tra họ tên, email, tiêu đề và nội dung tin nhắn.
+- Giao diện sáng/tối; lựa chọn giao diện được lưu trong `localStorage`.
+- Bố cục responsive cho màn hình di động và máy tính.
 
-## React Compiler
+> Biểu mẫu liên hệ hiện kiểm tra dữ liệu ở phía trình duyệt và hiển thị trạng thái thành công; chưa kết nối API gửi email hoặc backend.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Công nghệ
 
-## Expanding the ESLint configuration
+- React 19 và TypeScript
+- Vite
+- Tailwind CSS 4
+- React Router
+- Redux Toolkit
+- Lucide React
+- i18next và react-i18next
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Bắt đầu
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Cần cài đặt Node.js và npm trước khi chạy dự án.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Sau đó mở địa chỉ local mà Vite hiển thị trong terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Lệnh | Mô tả |
+| --- | --- |
+| `npm run dev` | Chạy ứng dụng ở chế độ phát triển |
+| `npm run build` | Kiểm tra TypeScript và tạo bản build production |
+| `npm run lint` | Kiểm tra mã nguồn bằng ESLint |
+| `npm run preview` | Xem thử bản build production |
 
+## Đa ngôn ngữ
+
+Ứng dụng hỗ trợ tiếng Việt và tiếng Anh. Cấu hình i18next nằm trong `src/i18n.ts`; nội dung bản dịch được lưu tại `src/locales/vi.json` và `src/locales/en.json`.
+
+Trong component React, dùng `useTranslation` để lấy hàm `t`:
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function Example() {
+  const { t } = useTranslation();
+  return <h1>{t('projects.heading.title')}</h1>;
+}
 ```
+
+Nút EN/VI đổi ngôn ngữ bằng i18next. Ngôn ngữ đã chọn được lưu trong `localStorage` với key `portfolio_language` và được khôi phục khi tải lại trang.
+
+## Các trang
+
+| Đường dẫn | Nội dung |
+| --- | --- |
+| `/` | Giới thiệu |
+| `/projects` | Danh sách và bộ lọc dự án |
+| `/projects/:id` | Chi tiết dự án |
+| `/contact` | Thông tin liên hệ và biểu mẫu |
+
+## Cấu trúc chính
+
+```text
+src/
+├── features/
+│   ├── about/       # Trang giới thiệu và dữ liệu hồ sơ
+│   ├── projects/    # Danh sách, bộ lọc và chi tiết dự án
+│   └── contact/     # Thông tin liên hệ và biểu mẫu
+├── routes/          # Khai báo các route
+├── locales/         # Nội dung tiếng Việt và tiếng Anh
+├── i18n.ts          # Cấu hình i18next
+├── shared/          # Thành phần, hook và tiện ích dùng chung
+└── store/           # Redux store và trạng thái giao diện
+```
+
+## Cập nhật nội dung portfolio
+
+- Thông tin hồ sơ: `src/features/about/data/profileData.ts`
+- Dữ liệu dự án: `src/features/projects/data/projectsData.ts`
+- Thông tin liên hệ: `src/features/contact/data/contactData.ts`

@@ -1,4 +1,5 @@
 import { Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Input } from '../../../shared/components/ui/Input';
 
 interface ProjectFilterBarProps {
@@ -16,6 +17,8 @@ export function ProjectFilterBar({
     onSelectTech,
     techStacks,
 }: ProjectFilterBarProps) {
+    const { t } = useTranslation();
+
     return (
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8">
             <div className="flex flex-wrap items-center gap-2">
@@ -30,7 +33,7 @@ export function ProjectFilterBar({
                                     : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
                                 }`}
                         >
-                            {tech === 'All' ? 'Tất cả' : tech}
+                            {tech === 'All' ? t('projects.all') : tech}
                         </button>
                     );
                 })}
@@ -41,7 +44,7 @@ export function ProjectFilterBar({
                 <Input
                     value={searchQuery}
                     onChange={(e) => onSearchChange(e.target.value)}
-                    placeholder="Tìm dự án hoặc công nghệ..."
+                    placeholder={t('projects.searchPlaceholder')}
                     className="pl-10"
                 />
             </div>

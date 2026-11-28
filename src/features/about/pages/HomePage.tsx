@@ -6,7 +6,7 @@ export function HomePage() {
     return (
         <div className="space-y-12">
             <HeroSection profile={PROFILE_DATA} />
-            <AboutSection profile={PROFILE_DATA} />
+            <AboutSection />
         </div>
     );
 }

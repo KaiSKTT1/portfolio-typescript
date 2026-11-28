@@ -1,17 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import { Code2, Moon, Sun, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { toggleLanguage, toggleTheme } from '../../../store/slices/themeSlice';
+import { toggleTheme } from '../../../store/slices/themeSlice';
 
 const NAV_ITEMS = [
-    { to: '/', labelVi: 'Giới thiệu', labelEn: 'About' },
-    { to: '/projects', labelVi: 'Dự án', labelEn: 'Projects' },
-    { to: '/contact', labelVi: 'Liên hệ', labelEn: 'Contact' },
+    { to: '/', labelKey: 'nav.about' },
+    { to: '/projects', labelKey: 'nav.projects' },
+    { to: '/contact', labelKey: 'nav.contact' },
 ];
 
 export function Header() {
     const dispatch = useAppDispatch();
-    const { mode, language } = useAppSelector((state) => state.theme);
+    const { mode } = useAppSelector((state) => state.theme);
+    const { t, i18n } = useTranslation();
+    const language = i18n.resolvedLanguage ?? 'vi';
 
     return (
         <header className="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
@@ -39,16 +42,18 @@ export function Header() {
                                 }`
                             }
                         >
-                            {language === 'vi' ? item.labelVi : item.labelEn}
+                            {t(item.labelKey)}
                         </NavLink>
                     ))}
                 </nav>
 
                 <div className="flex items-center gap-2">
                     <button
-                        onClick={() => dispatch(toggleLanguage())}
+                        onClick={() => {
+                            void i18n.changeLanguage(language === 'vi' ? 'en' : 'vi');
+                        }}//Chuyển đổi ngôn ngữ thông qua i18n.changeLanguage
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                        title="Switch Language"
+                        title={t('header.switchLanguage')}
                     >
                         <Globe className="w-3.5 h-3.5" />
                         {language.toUpperCase()}
@@ -57,7 +62,7 @@ export function Header() {
                     <button
                         onClick={() => dispatch(toggleTheme())}
                         className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                        title="Toggle Dark/Light Mode"
+                        title={t('header.toggleTheme')}
                     >
                         {mode === 'dark' ? (
                             <Sun className="w-4 h-4 text-amber-400" />
@@ -82,7 +87,7 @@ export function Header() {
                             }`
                         }
                     >
-                        {language === 'vi' ? item.labelVi : item.labelEn}
+                        {t(item.labelKey)}
                     </NavLink>
                 ))}
             </div>

@@ -13,7 +13,7 @@ export interface ContactErrors {
 }
 
 export interface ContactInfoItem {
-    label: string;
-    value: string;
+    id: 'email' | 'phone' | 'location';
+    value?: string;
     href?: string;
 }

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { ThemeMode, Language } from '../../shared/types/common';
+import type { ThemeMode } from '../../shared/types/common';
 
 //Trạng thái giao diện người dùng
 interface ThemeState {
@@ -18,7 +18,6 @@ const getInitialTheme = (): ThemeMode => {
 
 const initialState: ThemeState = {
     mode: getInitialTheme(),
-    language: 'vi',
 };
 
 const themeSlice = createSlice({
@@ -37,11 +36,8 @@ const themeSlice = createSlice({
                 localStorage.setItem('portfolio_theme', state.mode);
             }
         },
-        toggleLanguage(state) {
-            state.language = state.language === 'en' ? 'vi' : 'en';
-        },
     }
 });
 
-export const { toggleTheme, setTheme, toggleLanguage } = themeSlice.actions;
+export const { toggleTheme, setTheme } = themeSlice.actions;
 export default themeSlice.reducer;

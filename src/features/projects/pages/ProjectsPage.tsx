@@ -1,11 +1,19 @@
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PROJECTS_DATA } from '../data/projectsData';
 import { useProjectFilters } from '../hooks/useProjectFilters';
+import { localizeProject } from '../utils/projectHelpers';
 import { SectionHeading } from '../../../shared/components/ui/SectionHeading';
 import { Button } from '../../../shared/components/ui/Button';
 import { ProjectFilterBar } from '../components/ProjectFilterBar';
 import { ProjectCard } from '../components/ProjectCard';
 
 export function ProjectsPage() {
+    const { t } = useTranslation();
+    const localizedProjects = useMemo(
+        () => PROJECTS_DATA.map((project) => localizeProject(project, (key) => t(key))),
+        [t]
+    );
     const {
         searchQuery,
         setSearchQuery,
@@ -14,14 +22,14 @@ export function ProjectsPage() {
         techStacks,
         filteredProjects,
         resetFilters,
-    } = useProjectFilters(PROJECTS_DATA);
+    } = useProjectFilters(localizedProjects);
 
     return (
         <div>
             <SectionHeading
-                badge="Portfolio Showcase"
-                title="Dự án tiêu biểu"
-                subtitle="Các sản phẩm mình đã thiết kế kiến trúc và trực tiếp xây dựng từ con số 0."
+                badge={t('projects.heading.badge')}
+                title={t('projects.heading.title')}
+                subtitle={t('projects.heading.subtitle')}
             />
 
             <ProjectFilterBar
@@ -35,10 +43,10 @@ export function ProjectsPage() {
             {filteredProjects.length === 0 ? (
                 <div className="text-center py-16 rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 space-y-4">
                     <p className="text-slate-500 dark:text-slate-400">
-                        Không tìm thấy dự án nào khớp với bộ lọc hiện tại.
+                        {t('projects.noResults')}
                     </p>
                     <Button variant="outline" size="sm" onClick={resetFilters}>
-                        Xoá bộ lọc
+                        {t('projects.clearFilters')}
                     </Button>
                 </div>
             ) : (

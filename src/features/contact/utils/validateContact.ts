@@ -4,22 +4,22 @@ export function validateContactForm(values: ContactMessageDto): ContactErrors {
     const errors: ContactErrors = {};
 
     if (!values.senderName.trim()) {
-        errors.senderName = 'Vui lòng nhập họ tên của bạn.';
+        errors.senderName = 'contact.validation.senderNameRequired';
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!values.senderEmail.trim()) {
-        errors.senderEmail = 'Vui lòng nhập địa chỉ email.';
+        errors.senderEmail = 'contact.validation.senderEmailRequired';
     } else if (!emailRegex.test(values.senderEmail.trim())) {
-        errors.senderEmail = 'Địa chỉ email không hợp lệ.';
+        errors.senderEmail = 'contact.validation.senderEmailInvalid';
     }
 
     if (!values.subject.trim()) {
-        errors.subject = 'Vui lòng nhập tiêu đề liên hệ.';
+        errors.subject = 'contact.validation.subjectRequired';
     }
 
     if (!values.message.trim() || values.message.trim().length < 10) {
-        errors.message = 'Nội dung tin nhắn cần ít nhất 10 ký tự.';
+        errors.message = 'contact.validation.messageMinLength';
     }
 
     return errors;

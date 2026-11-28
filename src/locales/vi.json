@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "title": "DevPortfolio | Nguyễn Hữu Phúc",
+    "description": "Portfolio cá nhân của Nguyễn Hữu Phúc."
+  },
+  "nav": {
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "header": {
+    "switchLanguage": "Chuyển đổi ngôn ngữ",
+    "toggleTheme": "Đổi giao diện sáng/tối"
+  },
+  "home": {
+    "greeting": "Xin chào, mình là",
+    "role": "Software Engineer (ReactJS / TypeScript & Spring Boot)",
+    "tagline": "Phát triển ứng dụng Web toàn diện từ giao diện Frontend hiện đại, mượt mà với ReactJS, TypeScript, Redux đến hệ thống Backend RESTful API vững chắc với Java Spring Boot.",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "viewProjects": "Xem Dự Án",
+    "downloadResume": "Tải CV (PDF)",
+    "stats": {
+      "directionLabel": "Hướng phát triển",
+      "directionValue": "Fullstack",
+      "coreStackLabel": "Core Tech Stack",
+      "coreStackValue": "React & Spring"
+    }
+  },
+  "about": {
+    "badge": "About Me",
+    "title": "Giới thiệu & Định hướng phát triển",
+    "subtitle": "Câu chuyện của mình và cách mình xây dựng các sản phẩm Frontend chất lượng.",
+    "bio": [
+      "Xin chào! Mình là Nguyễn Hữu Phúc — một Software Engineer yêu thích việc xây dựng các sản phẩm web hoàn chỉnh từ tầng giao diện người dùng cho đến kiến trúc hệ thống phía sau.",
+      "Ở mảng Frontend, mình tập trung phát triển UI/UX trực quan, quản lý state chặt chẽ và dễ mở rộng với ReactJS, TypeScript, Redux Toolkit và Tailwind CSS theo kiến trúc Feature-based.",
+      "Ở mảng Backend, mình làm việc với Java và Spring Boot để thiết kế RESTful API, xử lý nghiệp vụ, bảo mật và kết nối cơ sở dữ liệu, giúp mình luôn có góc nhìn tổng thể khi phối hợp phát triển sản phẩm."
+    ],
+    "highlights": {
+      "architecture": {
+        "title": "Kiến trúc Feature-based",
+        "description": "Tổ chức code theo từng miền tính năng độc lập (types, data, hooks, utils, components, pages) dễ mở rộng."
+      },
+      "performance": {
+        "title": "Hiệu năng & Trải nghiệm",
+        "description": "Tối ưu hóa render với Custom Hooks, Debounce tìm kiếm và giao diện Dark/Light mode mượt mà."
+      },
+      "typescript": {
+        "title": "100% TypeScript Strict",
+        "description": "Mọi cấu trúc dữ liệu và Props đều được định nghĩa kiểu chặt chẽ, hạn chế tối đa lỗi runtime."
+      }
+    }
+  },
+  "resume": {
+    "download": "Tải CV (PDF)"
+  },
+  "projects": {
+    "heading": {
+      "badge": "Portfolio Showcase",
+      "title": "Dự án tiêu biểu",
+      "subtitle": "Các sản phẩm mình đã thiết kế kiến trúc và trực tiếp xây dựng từ con số 0."
+    },
+    "searchPlaceholder": "Tìm dự án hoặc công nghệ...",
+    "all": "Tất cả",
+    "featured": "Nổi bật",
+    "source": "Source",
+    "liveDemo": "Live Demo",
+    "details": "Chi tiết",
+    "noResults": "Không tìm thấy dự án nào khớp với bộ lọc hiện tại.",
+    "clearFilters": "Xoá bộ lọc",
+    "backToList": "Quay lại danh sách dự án",
+    "backToProjects": "Quay lại tất cả dự án",
+    "notFound": "Không tìm thấy dự án",
+    "completed": "Hoàn thành: {{date}}",
+    "problemTitle": "1. Bài toán cần giải quyết",
+    "solutionTitle": "2. Giải pháp & Kiến trúc",
+    "highlightsTitle": "Điểm nổi bật kỹ thuật",
+    "items": {
+      "elearning-platform": {
+        "title": "E-Learning Platform — Spring Boot RESTful API",
+        "shortDescription": "Hệ thống Backend RESTful API hiện đại cho nền tảng học trực tuyến, tích hợp xác thực JWT, phân quyền RBAC và lưu trữ file đám mây.",
+        "problemStatement": "Xây dựng một hệ thống Backend E-Learning có khả năng mở rộng cao, quản lý chặt chẽ quyền truy cập giữa Học viên, Giảng viên và Quản trị viên, đồng thời xử lý lưu trữ tài nguyên bài giảng và hình ảnh an toàn.",
+        "solutionArchitecture": "Thiết kế kiến trúc phân tầng chuẩn với Java 21 và Spring Boot 3.5, sử dụng Spring Security + JWT (Access/Refresh Token) cho bảo mật, Spring Data JPA + MySQL 8.0 quản lý dữ liệu và tích hợp Cloud Storage để upload học liệu.",
+        "highlights": [
+          "Xác thực và phân quyền bảo mật với JWT (Access Token & Refresh Token) cùng Role-Based Access Control (RBAC).",
+          "Quản lý trọn vẹn quy trình khóa học, bài giảng, đăng ký học và hồ sơ người dùng kèm upload avatar.",
+          "Chuẩn hóa cấu trúc RESTful API, xử lý ngoại lệ tập trung (Global Exception Handling) và kiểm tra dữ liệu đầu vào."
+        ]
+      },
+      "j2ee-ecommerce-backend": {
+        "title": "J2EE E-Commerce Backend (GHN & VNPay Integration)",
+        "shortDescription": "Hệ thống Backend thương mại điện tử tích hợp cổng thanh toán VNPay Sandbox, vận chuyển Giao Hàng Nhanh (GHN) và quản lý migration với Flyway.",
+        "problemStatement": "Các hệ thống bán hàng thực tế đòi hỏi quy trình thanh toán trực tuyến chính xác, đối soát giao dịch tự động (IPN reconciliation) và đồng bộ trạng thái vận đơn thời gian thực với đơn vị giao hàng.",
+        "solutionArchitecture": "Xây dựng trên nền tảng Java 21, Spring Boot, Spring Security và MySQL. Sử dụng Flyway để quản lý phiên bản schema DB, MapStruct ánh xạ DTO hiệu năng cao, Cloudinary lưu trữ ảnh sản phẩm và tích hợp Webhook/API của VNPay & GHN.",
+        "highlights": [
+          "Tích hợp thanh toán VNPay Sandbox hỗ trợ tạo URL thanh toán và xử lý Webhook IPN đối soát trạng thái đơn hàng.",
+          "Kết nối API Giao Hàng Nhanh (GHN) để tự động tạo, hủy và theo dõi hành trình vận đơn.",
+          "Quản lý database migration bài bản với Flyway, kết hợp MapStruct, Lombok và tài liệu hóa API qua SpringDoc OpenAPI (Swagger)."
+        ]
+      },
+      "lthd-springboot-fullstack": {
+        "title": "Fullstack Sales System (Spring Boot & React 19)",
+        "shortDescription": "Hệ thống quản lý bán hàng Fullstack kết hợp Backend Spring Boot bảo mật JWT, bộ nhớ đệm Redis và giao diện Frontend React 19 + Tailwind CSS v4.",
+        "problemStatement": "Tối ưu hóa tốc độ truy xuất dữ liệu sản phẩm/đơn hàng khi lượng truy cập tăng, đồng thời mang lại trải nghiệm mua sắm và quản trị mượt mà trên trình duyệt.",
+        "solutionArchitecture": "Kiến trúc tách biệt Client-Server: Backend sử dụng Java 21, Spring Boot, Nimbus JOSE + JWT, MapStruct và tích hợp Redis Cache để tăng tốc độ phản hồi API; Frontend xây dựng bằng React 19, Vite, React Router v7 và Tailwind CSS v4.",
+        "highlights": [
+          "Ứng dụng Spring Data Redis làm tầng bộ nhớ đệm (Caching) giúp giảm tải truy vấn trực tiếp xuống MySQL.",
+          "Bảo mật API bằng Spring Security kết hợp thư viện Nimbus JOSE + JWT và kiểm thử tích hợp với MockMvc & H2 Database.",
+          "Giao diện người dùng hiện đại phát triển trên React 19, Tailwind CSS v4 và Axios kết nối đồng bộ với REST API."
+        ]
+      },
+      "bus-tracking-system": {
+        "title": "BusTracking — Hệ Thống Theo Dõi Xe Buýt Thời Gian Thực",
+        "shortDescription": "Ứng dụng web Fullstack hỗ trợ tra cứu lộ trình, theo dõi vị trí xe buýt trực quan trên bản đồ số tương tác với React Leaflet và Redux Toolkit.",
+        "problemStatement": "Hành khách và nhà quản lý gặp khó khăn trong việc nắm bắt lộ trình tuyến xe, trạm dừng và theo dõi vị trí di chuyển trực quan trên bản đồ.",
+        "solutionArchitecture": "Phát triển mô hình Fullstack JavaScript: Frontend sử dụng React 19, Redux Toolkit quản lý trạng thái, React Leaflet & Leaflet Routing Machine hiển thị bản đồ lộ trình và Framer Motion tạo chuyển động; Backend dùng Node.js, Express và MySQL.",
+        "highlights": [
+          "Tích hợp bản đồ số tương tác bằng React Leaflet và Leaflet Routing Machine để vẽ tuyến đường và các trạm dừng.",
+          "Quản lý state toàn cục mượt mà với Redux Toolkit, kết hợp hiệu ứng chuyển cảnh Framer Motion và Tailwind CSS.",
+          "Xây dựng RESTful API với Node.js, Express và MySQL2 phục vụ dữ liệu tuyến xe, lịch trình và điểm dừng."
+        ]
+      },
+      "pdf-rag-chatbot": {
+        "title": "PDF/DOCX RAG Chatbot — Hỏi Đáp Tài Liệu Thông Minh",
+        "shortDescription": "Hệ thống AI Chatbot hỏi đáp trực tiếp trên tài liệu PDF/DOCX theo kiến trúc RAG chạy Local LLM qua Ollama, hỗ trợ OCR và trích dẫn nguồn trang.",
+        "problemStatement": "Việc tra cứu thông tin trong các tài liệu PDF/DOCX dài tốn nhiều thời gian, trong khi các mô hình LLM thông thường dễ gặp hiện tượng ảo giác (hallucination) và không trích dẫn được chính xác trang nguồn.",
+        "solutionArchitecture": "Triển khai pipeline Retrieval-Augmented Generation (RAG) bằng Python: Document Loader (hỗ trợ OCR tự động cho PDF scan) -> Text Splitter -> Embedding Model -> VectorStore -> Retriever kết hợp Local LLM qua Ollama và giao diện Streamlit.",
+        "highlights": [
+          "Xây dựng luồng RAG hoàn chỉnh: Upload PDF/DOCX, phân mảnh văn bản (Chunking), tạo VectorStore và truy xuất ngữ cảnh chính xác.",
+          "Tích hợp chế độ OCR linh hoạt (off/auto/force) cho tài liệu PDF dạng ảnh quét và trả về câu trả lời kèm Citations (nguồn, số trang).",
+          "Vận hành hoàn toàn với Local LLM thông qua Ollama đảm bảo quyền riêng tư dữ liệu, hỗ trợ cả giao diện web Streamlit và CLI debug."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "heading": {
+      "badge": "Get In Touch",
+      "title": "Liên hệ với mình",
+      "subtitle": "Bạn đang tìm kiếm Software Engineer cho dự án hoặc đội ngũ của mình? Hãy để lại lời nhắn bên dưới nhé!"
+    },
+    "info": {
+      "email": "Email trực tiếp",
+      "phone": "Số điện thoại / Zalo",
+      "location": "Khu vực làm việc",
+      "locationValue": "TP. Hồ Chí Minh, Việt Nam (On-site / Hybrid / Remote)"
+    },
+    "directHeading": "Thông tin liên hệ trực tiếp",
+    "socialHeading": "Kết nối qua mạng xã hội",
+    "form": {
+      "successTitle": "Gửi tin nhắn thành công!",
+      "successMessage": "Cảm ơn bạn đã liên hệ. Mình sẽ phản hồi qua email sớm nhất có thể.",
+      "sendAnother": "Gửi tin nhắn khác",
+      "nameLabel": "Họ và tên",
+      "namePlaceholder": "Nguyễn Văn A",
+      "emailLabel": "Email liên hệ",
+      "emailPlaceholder": "hr@company.com",
+      "subjectLabel": "Tiêu đề",
+      "subjectPlaceholder": "Lời mời hợp tác / Phỏng vấn",
+      "messageLabel": "Nội dung tin nhắn",
+      "messagePlaceholder": "Nhập nội dung trao đổi...",
+      "submit": "Gửi Tin Nhắn"
+    },
+    "validation": {
+      "senderNameRequired": "Vui lòng nhập họ tên của bạn.",
+      "senderEmailRequired": "Vui lòng nhập địa chỉ email.",
+      "senderEmailInvalid": "Địa chỉ email không hợp lệ.",
+      "subjectRequired": "Vui lòng nhập tiêu đề liên hệ.",
+      "messageMinLength": "Nội dung tin nhắn cần ít nhất 10 ký tự."
+    }
+  },
+  "footer": {
+    "builtWith": "© {{year}} {{name}}. Được xây dựng với React, TypeScript & Redux Toolkit."
+  }
+}
